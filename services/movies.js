@@ -11,7 +11,7 @@ var options = {
 	body: "{}"
 };
 
-const movies = [];
+let movies = [];
 
 request(options, function(error, response, body) {
 	if (error) throw new Error(error);

@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
 	console.log(Genre);
-	res.send("User working");
+	res.send(JSON.parse(Genre));
 });
 
 module.exports = router;
