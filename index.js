@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const Cors = require("cors");
 
-// app.use(Cors());
+app.use(Cors());
 
 // route folder location pass app
 require("./startup/routes")(app);
