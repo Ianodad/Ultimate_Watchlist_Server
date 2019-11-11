@@ -1,4 +1,5 @@
 const express = require("express");
+const auth = require("../../middleware/auth");
 
 const Movies = require("../../services/movies");
 
@@ -6,7 +7,7 @@ const router = express.Router();
 
 const Joi = require("joi");
 
-router.get("/", (req, res) => {
+router.get("/", auth, (req, res) => {
 	res.json(JSON.parse(Movies));
 });
 
@@ -14,10 +15,10 @@ router.get("/:id", (req, res) => {
 	const { results } = JSON.parse(Movies);
 	const movie = results.some(movie => movie.id === parseInt(req.params.id));
 
-	!movie
-		? res.status(404).send("Movie not found")
-		: // send filter results
-		  res.send(results.filter(movie => movie.id === parseInt(req.params.id)));
+	if (!movie) return res.status(404).send("Movie not found");
+
+	// send filter results
+	res.send(results.filter(movie => movie.id === parseInt(req.params.id)));
 });
 
 // router.post("/:id/comment", (req, res) => {

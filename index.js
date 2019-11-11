@@ -2,9 +2,13 @@ const express = require("express");
 
 // assign express to app
 const app = express();
+const Cors = require("cors");
+
+// app.use(Cors());
 
 // route folder location pass app
 require("./startup/routes")(app);
+require("./startup/config")();
 
 // Assign port if not assign in the  environment
 const PORT = process.env.PORT || 5000;

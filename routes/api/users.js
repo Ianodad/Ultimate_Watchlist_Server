@@ -8,8 +8,6 @@ router.get("/", (req, res) => {
 	res.json(Users);
 });
 
-router.get("/login", (req, res) => {
-	res.json(Users);
-});
+
 
 module.exports = router;
