@@ -2,9 +2,14 @@ const express = require("express");
 // assign express route to router
 const router = express.Router();
 
+const Users = require("../../services/users");
 
 router.get("/", (req, res) => {
-	res.send("User working");
+	res.json(Users);
+});
+
+router.get("/login", (req, res) => {
+	res.json(Users);
 });
 
 module.exports = router;

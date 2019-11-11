@@ -8,7 +8,7 @@ module.exports = function(app) {
 	);
 
 	// API ROUTINGS
-	app.use("/api/user", require("../routes/api/user"));
-	app.use("/api/movie", require("../routes/api/movie"));
-	app.use("/api/genre", require("../routes/api/genre"));
+	app.use("/api/users", require("../routes/api/users"));
+	app.use("/api/movies", require("../routes/api/movies"));
+	app.use("/api/genres", require("../routes/api/genres"));
 };
