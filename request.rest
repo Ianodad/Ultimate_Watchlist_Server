@@ -1,10 +1,23 @@
 // MOVIEs REQUEST CALLS
 GET http://localhost:5000/api/movies
 ###
-# GET http://localhost:5000/api/movies/1
-###
-# POST http://localhost:5000/api/movies/1/comment
+GET http://localhost:5000/api/movies/290859
+
 ####
+
+POST http://localhost:5000/api/movies/501170/comment
+
+Content-Type: application/json
+
+{
+     "comment": "This is the comment",
+     "username": "ian"
+}
+
+####
+
+# POST http://localhost:5000/api/movies/1/comments
+###
 // USERS REQUEST CALLS 
 
 GET http://localhost:5000/api/users
