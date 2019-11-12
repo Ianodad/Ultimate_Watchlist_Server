@@ -1,20 +1,16 @@
 const express = require("express");
-const Genre = require("../../services/genres");
+const Genres = require("../../services/genres");
 
 const router = express.Router();
 
 router.get("/", (req, res) => {
-	console.log(Genre);
-	res.send(JSON.parse(Genre));
+	console.log(Genres);
+	res.send(JSON.parse(Genres));
 });
 
 router.get("/:id", (req, res) => {
-	console.log(Genre);
-	res.send(JSON.parse(Genre));
+	console.log(Genres);
+	res.send(JSON.parse(Genres));
 });
-
-
-
-
 
 module.exports = router;
