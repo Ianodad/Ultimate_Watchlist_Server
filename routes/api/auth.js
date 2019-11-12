@@ -20,12 +20,15 @@ router.post("/login", (req, res) => {
 	);
 	if (!password) return res.status(400).send("invalid password");
 
-	const token = jwt.sign({ username }, config.get("jwtPrivateKey"), {
+	const user = Users.find(user => user.username === req.body.username);
+
+	const token = jwt.sign({ user }, config.get("jwtPrivateKey"), {
 		expiresIn: 86400
 	});
 	console.log(token);
 	res
 		.header("x-auth-token", token)
+		.header("access-control-expose-headers", "x-auth-token")
 		.status(200)
 		.send({ auth: true, token });
 });

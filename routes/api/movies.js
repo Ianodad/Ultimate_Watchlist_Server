@@ -12,7 +12,7 @@ router.get("/", auth, (req, res) => {
 	res.json(JSON.parse(Movies));
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", auth, (req, res) => {
 	const { results } = JSON.parse(Movies);
 	const movie = results.some(movie => movie.id === parseInt(req.params.id));
 
@@ -24,7 +24,6 @@ router.get("/:id", (req, res) => {
 
 // get all comments belong to the movie
 router.get("/:id/comments", (req, res) => {
-
 	// check if id is equal to the index number
 	const comments = Comments.some(
 		comment => comment.movieId === parseInt(req.params.id)
