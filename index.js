@@ -1,5 +1,8 @@
 const express = require("express");
 
+//const config = require("config");
+// var key = config.get("movieDBkey")
+
 // assign express to app
 const app = express();
 const Cors = require("cors");

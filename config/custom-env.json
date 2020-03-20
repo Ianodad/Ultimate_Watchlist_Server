@@ -1,3 +1,4 @@
 {
-	"jwtPrivateKey": "watch_jwtPrivateKey"
+	"jwtPrivateKey": "watch_jwtPrivateKey",
+	"movieDbkey": "0ac0a0ff34c0490450e8232fa50b2269"
 }

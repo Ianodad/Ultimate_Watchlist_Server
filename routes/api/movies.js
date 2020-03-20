@@ -8,18 +8,21 @@ const router = express.Router();
 
 const Joi = require("joi");
 
-router.get("/", auth, (req, res) => {
-	res.json(JSON.parse(Movies));
+router.get("/", auth, async (req, res) => {
+
+	const {results} = await Movies()
+	res.json(results);
 });
 
-router.get("/:id", auth, (req, res) => {
-	const { results } = JSON.parse(Movies);
-	const movie = results.some(movie => movie.id === parseInt(req.params.id));
+router.get("/:id", auth, async(req, res) => {
+	const {results} = await Movies();
+	// console.log(results)
+	const movie = await results.some((movie) => movie.id === parseInt(req.params.id));
+	console.log(movie)
 
-	if (!movie) return res.status(404).send("Movie not found");
-
-	// send filter results
+	!movie ?  res.status(404).send("Movie not found") :
 	res.send(results.filter(movie => movie.id === parseInt(req.params.id)));
+	// send filter results
 });
 
 // get all comments belong to the movie

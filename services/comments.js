@@ -1,1 +1,1 @@
-module.exports = commnets = [{ movieId: 29085, comment: "Great watch" }];
+module.exports = comments = [{ movieId: 29085, comment: "Great watch" }];
