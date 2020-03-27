@@ -9,7 +9,7 @@ COPY . /app
 # run install command
 RUN npm install
 
-EXPOSE 5000
+# EXPOSE 5000
 
 # copy the rest of the soource files
 # COPY . /app
